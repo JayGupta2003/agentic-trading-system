@@ -98,11 +98,15 @@ Full-period cost sensitivity: **+63.2%** with zero costs, **+0.9%** with base co
 
 ## Limitations
 
-- **No evidence of profitability.** The only backtest numbers here are for the rule-based baseline above, and they do not beat the benchmarks. The LLM agents themselves have not been backtested. The dashboard's "Demo Mode" shows illustrative sample data, clearly labelled as such.
+- **No evidence of profitability.** The only backtest numbers here are for the rule-based baseline above, and they do not beat the benchmarks. The LLM agents themselves have not been backtested yet, only because it is not currently feasible (see [Roadmap](#roadmap)). The dashboard's "Demo Mode" shows illustrative sample data, clearly labelled as such.
 - **Not production.** The system runs locally on small open models. It has not been deployed or run against live capital.
 - **LLM output is not a signal by itself.** Agents can misread data (see the expiry-week note) and can narrate fields that are missing. Treat reports as research input.
 - **Data sources.** Prices come from yfinance, fundamentals from Screener.in pages, news from NewsAPI. Respect each provider's terms of use and rate limits. No scraped data is included in this repository.
 - **In-memory checkpointing.** `MemorySaver` does not persist across sessions.
+
+## Roadmap
+
+- **Evaluate the LLM agents themselves.** This has not been done yet because it is not currently feasible: replaying six LLM agents over years of history is too slow on a single 8 GB GPU, the models' training data overlaps the test period (look-ahead leakage), and the fundamentals are static snapshots rather than point-in-time. It is planned as future work. Any LLM-driven signal will be judged against the rule-based baseline and the benchmarks above, under the same engine, costs and dates.
 
 ## License
 
