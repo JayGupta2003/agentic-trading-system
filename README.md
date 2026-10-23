@@ -1,6 +1,6 @@
 # Agentic Trading System
 
-A multi-agent LLM research system for Indian equities (NSE/BSE), built on **LangGraph**. Six specialised agents analyse a stock, a CIO agent synthesises their reports into a verdict with entry, stop-loss and target, and a **trigger engine** decides which agents are worth running for a given market event. An event-driven backtester replays the same pipeline day by day.
+A multi-agent LLM research system for Indian equities (NSE/BSE), built on **LangGraph**. Six specialised agents analyse a stock, a CIO agent synthesises their reports into a verdict with entry, stop-loss and target, and a **trigger engine** decides which agents are worth running for a given market event. An event-driven backtester replays the trigger, risk and execution machinery day by day, using rule-based stand-in signals in place of the LLM agents (see [Backtesting](#how-it-works) and [Baseline results](#baseline-results-rule-based-signals-not-the-llm-agents)).
 
 > **Research project, not financial advice.** The system has never traded real money and makes no claim of live performance. See [Limitations](#limitations).
 
