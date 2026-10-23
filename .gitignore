@@ -1,0 +1,23 @@
+# Secrets
+.env
+*.key
+*_api.txt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Local data, caches and generated output
+data/
+backtest_results/
+logs/
+*.log
+screener_samples/
+
+# Editors
+.vscode/
+.idea/

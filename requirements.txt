@@ -1,0 +1,32 @@
+# Core Agent Framework
+langgraph
+langchain-core
+langchain-ollama
+langchain-groq
+
+# Data
+yfinance
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+
+# Quant & Analysis
+ta
+scipy
+
+# Dashboard
+streamlit
+plotly
+streamlit-extras
+
+# Utilities
+python-dotenv
+loguru
+pydantic
+pydantic-settings
+
+# Testing
+pytest
+pytest-asyncio

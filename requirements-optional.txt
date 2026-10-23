@@ -1,0 +1,5 @@
+# Optional: NSE option-chain data for the Derivatives agent.
+# Read the data provider's terms of use before enabling. The system degrades
+# gracefully if these are not installed.
+pnsea
+stealthkit
