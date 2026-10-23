@@ -108,8 +108,8 @@ class NiftyUniverseLoader:
     def _load_backup_universe(self) -> List[str]:
         """Load backup universe of major NIFTY stocks."""
         backup_stocks = [
-            "RELIANCE", "TCS", "HDFCBANK", "INFOSYS", "HINDUJAL", "ICICIBANK",
-            "SBIN", "BHARTIARTL", "ITC", "KOTAKBANK", "LT", "HDFC", "AXISBANK",
+            "RELIANCE", "TCS", "HDFCBANK", "INFY", "HINDALCO", "ICICIBANK",
+            "SBIN", "BHARTIARTL", "ITC", "KOTAKBANK", "LT", "TATACONSUM", "AXISBANK",
             "ASIANPAINT", "MARUTI", "NESTLEIND", "ULTRACEMCO", "TITAN", "BAJFINANCE",
             "SUNPHARMA", "TATASTEEL", "WIPRO", "POWERGRID", "NTPC", "ONGC",
             "COALINDIA", "JSWSTEEL", "ADANIPORTS", "CIPLA", "TECHM", "M&M",
@@ -124,8 +124,8 @@ class NiftyUniverseLoader:
     def get_nifty50(self) -> List[str]:
         """Get NIFTY 50 stocks."""
         nifty50 = [
-            "RELIANCE", "TCS", "HDFCBANK", "INFOSYS", "HINDUJAL", "ICICIBANK",
-            "SBIN", "BHARTIARTL", "ITC", "KOTAKBANK", "LT", "HDFC", "AXISBANK",
+            "RELIANCE", "TCS", "HDFCBANK", "INFY", "HINDALCO", "ICICIBANK",
+            "SBIN", "BHARTIARTL", "ITC", "KOTAKBANK", "LT", "TATACONSUM", "AXISBANK",
             "ASIANPAINT", "MARUTI", "NESTLEIND", "ULTRACEMCO", "TITAN", "BAJFINANCE",
             "SUNPHARMA", "TATASTEEL", "WIPRO", "POWERGRID", "NTPC", "ONGC",
             "COALINDIA", "JSWSTEEL", "ADANIPORTS", "CIPLA", "TECHM", "M&M",

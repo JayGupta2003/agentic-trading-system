@@ -415,6 +415,7 @@ class EventDrivenBacktester:
                 ticker = yf.Ticker(sym)
                 df = ticker.history(start=start, end=end)
                 if len(df) > 0:
+                    df = self._naive_index(df)
                     df = self._add_technical_indicators(df)
                     self._data[symbol] = df
             except Exception as e:
@@ -424,7 +425,7 @@ class EventDrivenBacktester:
             vix = yf.Ticker("^INDIAVIX")
             vix_df = vix.history(start=start, end=end)
             if len(vix_df) > 0:
-                self._vix_data = vix_df
+                self._vix_data = self._naive_index(vix_df)
         except Exception:
             print("Warning: Could not load VIX data")
         
@@ -432,17 +433,25 @@ class EventDrivenBacktester:
             nifty = yf.Ticker("^NSEI")
             nifty_df = nifty.history(start=start, end=end)
             if len(nifty_df) > 0:
-                self._nifty_data = nifty_df
+                self._nifty_data = self._naive_index(nifty_df)
         except Exception:
             print("Warning: Could not load Nifty data")
     
+    @staticmethod
+    def _naive_index(df: pd.DataFrame) -> pd.DataFrame:
+        """Strip timezone info so dates compare with the naive config dates."""
+        df = df.copy()
+        idx = pd.DatetimeIndex(df.index)
+        df.index = idx.tz_localize(None) if idx.tz is not None else idx
+        return df
+
     def _format_symbol(self, symbol: str) -> str:
         """Format symbol for yfinance."""
         sym = symbol.upper().strip()
         if not sym.endswith(".NS"):
             if sym in ["NIFTY", "BANKNIFTY", "FINNIFTY"]:
                 sym = f"{sym}.NS"
-            elif len(sym) <= 10 and sym.isalpha():
+            elif len(sym) <= 12 and sym.replace("&", "").replace("-", "").isalnum():
                 sym = f"{sym}.NS"
         return sym
     
